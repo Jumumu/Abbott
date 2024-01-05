@@ -4,6 +4,7 @@ services:
   test_db:
     image: postgres:16.1
     restart: always
+    user: "${UID:-999}:${GID:-999}"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: bar
